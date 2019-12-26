@@ -1,0 +1,7 @@
+- name: clear memcache
+  hosts: all
+  serial: 1
+
+  tasks:
+  - name: clear memcache
+    command: echo flush_all | nc localhost 11211

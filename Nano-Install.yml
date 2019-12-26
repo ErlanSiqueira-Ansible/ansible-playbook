@@ -1,0 +1,11 @@
+---
+- name: Nano | Install Nano
+  hosts: all
+  remote_user: root
+  tasks:
+  - name: Nano | Install Nano
+    yum:
+      name: 'install'
+      state: latest
+    with_items:
+      - nano

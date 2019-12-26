@@ -12,13 +12,13 @@
   - name: expire-caches
     command: yum clean expire-cache
 
-  - name: yum -y {{ yumcommand }}
-    command: yum -y {{ yumcommand }}
+  - name: yum -y {{ update }}
+    command: yum -y {{ update }}
     async: 7200
     poll: 30
 
 - name: run rkhunter if installed
-  hosts:  "{{ target }}"
+  hosts:  "all"
   user: root
 
   tasks:

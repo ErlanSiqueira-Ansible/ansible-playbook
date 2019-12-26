@@ -3,7 +3,7 @@
 # requires --extra-vars="target=somehostname yumcommand=update"
 
 
-- name: update the system
+- name: check for updates
   hosts: "{{ all }}"
   gather_facts: false
   user: root

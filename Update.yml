@@ -1,5 +1,7 @@
 
 ---
+  debug_enabled_default: false
+  server_yum_check_managed: true
 - hosts: 'all'
   become: yes
   roles:

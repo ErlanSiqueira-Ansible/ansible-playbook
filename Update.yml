@@ -31,13 +31,13 @@
 # We use the command module here because the real module can't expire
 #
 
-  - name: make yun recheck for new metadata from repos
+  - name: make yum recheck for new metadata from repos
     command: yum clean expire-cache
 
-  - name: check for updates (dnf)
+  - name: check for updates (yum)
     dnf: list=updates
-    register: dnfoutput
+    register: yumoutput
 
   - debug: msg="{{ inventory_hostname}} {{ dnfoutput.results|length }}"
-    when: dnfoutput.results|length > 0
+    when: yumoutput.results|length > 0
 

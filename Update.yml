@@ -38,6 +38,6 @@
     yum: list=updates
     register: yumoutput
 
-  - debug: msg="{{ inventory_hostname}} {{ dnfoutput.results|length }}"
+  - debug: msg="{{ inventory_hostname}} {{ yumoutput.results|length }}"
     when: yumoutput.results|length > 0
 

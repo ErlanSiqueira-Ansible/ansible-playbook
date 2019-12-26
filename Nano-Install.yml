@@ -5,7 +5,7 @@
   tasks:
   - name: Nano | Install Nano
     yum:
-      name: 'install'
+      name: 'nano'
       state: latest
     with_items:
       - nano

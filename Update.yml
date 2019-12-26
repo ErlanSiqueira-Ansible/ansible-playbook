@@ -31,8 +31,8 @@
 # We use the command module here because the real module can't expire
 #
 
-  - name: make dnf recheck for new metadata from repos
-    command: dnf clean expire-cache
+  - name: make yun recheck for new metadata from repos
+    command: yum clean expire-cache
 
   - name: check for updates (dnf)
     dnf: list=updates

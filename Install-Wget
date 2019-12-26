@@ -1,0 +1,11 @@
+---
+- name: Wget | Install Wget
+  hosts: all
+  remote_user: root
+  tasks:
+  - name: Wget | Install Wget
+    yum:
+      name: 'wget'
+      state: latest
+    with_items:
+      - wget

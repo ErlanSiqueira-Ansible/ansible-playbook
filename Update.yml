@@ -4,7 +4,7 @@
   gather_facts: false
   tasks:
       - name: check packages for updates
-      shell: yum list updates | awk 'f;/Updated Packages/{f=1;}' | awk '{ print $1 }'
+      command: yum list updates | awk 'f;/Updated Packages/{f=1;}' | awk '{ print $1 }'
       changed_when: updates.stdout_lines | length > 0
       args:
         warn: false
@@ -22,14 +22,14 @@
           package:
             name: yum-utils
         - name: check if reboot is required
-          shell: needs-restarting -r
+          command: needs-restarting -r
           failed_when: false
           register: reboot_required
           changed_when: false
     - when: updates.stdout_lines | length > 0 and reboot_required.rc != 0
       block:
         - name: reboot the server if required
-          shell: sleep 3; reboot
+          command: sleep 3; reboot
           ignore_errors: true
           changed_when: false
           async: 1

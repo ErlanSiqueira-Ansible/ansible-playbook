@@ -35,7 +35,7 @@
     command: yum clean expire-cache
 
   - name: check for updates (yum)
-    dnf: list=updates
+    command: list=updates
     register: yumoutput
 
   - debug: msg="{{ inventory_hostname}} {{ dnfoutput.results|length }}"

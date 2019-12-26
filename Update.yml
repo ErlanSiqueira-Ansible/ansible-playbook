@@ -1,6 +1,5 @@
 ---
 - hosts: all
- gather_facts: no
  tasks:
 
  - name: upgrade all packages

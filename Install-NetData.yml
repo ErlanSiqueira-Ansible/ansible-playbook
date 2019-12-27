@@ -1,0 +1,8 @@
+---
+
+- name: Execute the command in remote shell; stdout goes to the specified file on the remote.
+  shell: bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+  shell: sudo firewall-cmd --permanent --zone=public --add-port=19999/tcp
+  shell: sudo firewall-cmd --reload
+  
+  ...

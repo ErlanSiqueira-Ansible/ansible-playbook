@@ -1,4 +1,4 @@
-- hosts: red-hat-amom
+- hosts: 10.131.0.210
   tasks:
   - name: Execute a command using the shell module
     become: true

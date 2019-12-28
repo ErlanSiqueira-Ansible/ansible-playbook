@@ -4,4 +4,4 @@
     become: true
     become_user: root
     shell: bash <(curl -Ss https://my-netdata.io/kickstart.sh)
-    shell: +sudo firewall-cmd --permanent --zone=public --add-port=19999/tcp
+           sudo firewall-cmd --permanent --zone=public --add-port=19999/tcp
